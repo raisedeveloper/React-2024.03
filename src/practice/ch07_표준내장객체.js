@@ -31,3 +31,16 @@ console.log(power);
 
 let even = numbers.filter(val => val % 2 == 0);
 console.log(even);
+console.log(fruits.filter((val => val.length >= 6)));
+
+let sum = numbers.reduce((prev, curr) => prev + curr, 0)   // 초기값 0
+console.log(sum);   // 51, [4, 7, 10, 9, 15, 6] 의 합
+console.log(numbers.reduce((prev, curr) => prev * curr, 1));
+
+const complex = [
+  {name:'pad', price:150000}, {name:'no-line mouse', price:80000}, {name:'electric pen', price:30000}
+];
+const jsonComplex = JSON.stringify(complex);    // 문자열로 만듦
+console.log(jsonComplex);
+const parseComplex = JSON.parse(jsonComplex)    // 문자열을 특별한 구조체로 만듦
+console.log(parseComplex);
