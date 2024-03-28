@@ -3,7 +3,7 @@ import '../apps/App.css';
 
 
 export default function CardInput2(props) {
-  const [form, setForm] = useState({ name: props.name, email: props.email });
+    const [form, setForm] = useState({ name: props.name, email: props.email });
   const handleSubmit = (event) => {
     event.preventDefault(); {/* 서브밋 버튼을 누르면 페이지가 자동적으로 바뀌는 것을 방지 */ }
     console.log(form);
