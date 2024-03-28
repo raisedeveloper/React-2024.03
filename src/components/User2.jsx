@@ -3,7 +3,7 @@ import '../apps/App.css';
 
 /* thymeleaf 일 때 주어진 것을 가지고 렌더링 하는 것도 어려웠는데 리액트는 클라이언터 사이드에 
 렌더링을 하니까 서버 로직도 리액트 안에 들어가 있어서 둘을 함께 구현하는 것이 어렵게 느껴질 수 있음 */
-export default function User() {
+export default function User2() {
   const initUsers = [
     { id: 1, name: 'admin', email: 'admin@human.com' },
     { id: 2, name: 'james', email: 'james@naver.com' }
@@ -12,24 +12,28 @@ export default function User() {
   const [form, setForm] = useState({ id: '', name: '', email: '' });
 
   const handleSubmit = (event) => {
-    event.preventDefault();       {/* submit button을 누르면 페이지가 자동적으로 바뀌는 것을 방지 */ }
+    event.preventDefault(); {/* submit button을 누르면 페이지가 자동적으로 바뀌는 것을 방지 */ }
+    // 선생님 코드를 내것으로 만들기!
     const existUser = users.find(user => user.id == form.id);
     const newUsers = [];
-    // 선생님 코드
-    let user = user.find(val => val.id == form.id);
+    
     // 값을 변경
-    if (existUser) { 
+    if (existUser) {
       for (let val of users)
         if (val.id == form.id)    // 같으면 form 을 누르고 아니면 아래 선택지
-          newUsers.push(form);    
+        newUsers.push(form);
         else
           newUsers.push(val);
-          } else 
+      setUsers(newUsers);
+    } else
       setUsers([...users, form]);
-    }
-    const handleChange = (event) => 
-    setUsers([...users, form]);
   }
+  
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setForm({ ...form, [name]: value });
+  }
+
   // const handleC = (event) => {
   //   const { name, value } = event.target;
   //   setForm({ ...form, [name]:value });   // 값을 바꿀 때 setFrom 사용
@@ -50,7 +54,7 @@ export default function User() {
   //   setForm(user);
   //};
   return (
-    <div className="card">    
+    <div className="card">
       <h1>사용자 목록</h1>
       <table border={1}>
         <tr><th>ID</th><th>name</th><th>email</th></tr>
@@ -67,16 +71,16 @@ export default function User() {
       <br />
       <form onSubmit={handleSubmit}>
         <label htmlFor='id'>아이디:</label>
-        <input type='text' id='id' name='id' value={form.id} 
-          onChange={handleChange} 
+        <input type='text' id='id' name='id' value={form.id}
+          onChange={handleChange}
         /><br />
         <label htmlFor='name'>이름:</label>
-        <input type='text' id='name' name='name' value={form.name} 
-          onChange={handleChange} 
+        <input type='text' id='name' name='name' value={form.name}
+          onChange={handleChange}
         /><br />
         <label htmlFor='email'>이메일:</label>
-        <input type='text' id='email' name='email' value={form.email} 
-          onChange={handleChange} 
+        <input type='text' id='email' name='email' value={form.email}
+          onChange={handleChange}
         /><br />
         <button>추가/수정</button>
       </form>
@@ -86,6 +90,7 @@ export default function User() {
       }}>삭제</button>
     </div>
   );
+}
 
 
 

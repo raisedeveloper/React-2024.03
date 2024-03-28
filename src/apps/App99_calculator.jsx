@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import logo from '../logo.svg';
 import './App.css';
-import User2 from '../components/User2';
+import Calculator from '../components/Calculator';
 
 export default function App() {
-
   return (
-    <div className='card'>
-      <User2 />
+    <div>
+      <Calculator />
     </div>
   );
 }
