@@ -5,10 +5,19 @@
 }
 
 .card {
-  width: 300px;
+  width: 500px;
   text-align: center;
   padding: 10px;
   background-color: #ebebeb;
+  border-radius: 20px;
+}
+
+.cards {
+  width: 300px;
+  height: 485px;
+  text-align: center;
+  padding: 10px;
+  background-color: pink;
   border-radius: 20px;
 }
 
@@ -44,4 +53,53 @@ td {padding: 5px;}
   font-weight: bolder;
   padding: 10px;
   width: 198px;
+}
+
+li {
+  text-decoration: none;
+}
+
+.selectFilter {
+  padding: 5px;
+  margin: 0px 23px 0px 0px;
+  background-color: lightseagreen;
+  border: 1px;
+  border-radius: 10%;
+}
+
+.titleFont {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: darkcyan;
+}
+
+.spaceAdd{
+  margin-top: 10px;
+}
+
+.deleteButton {
+  background-color: pink;
+  border: 0;
+}
+
+.filterButton {
+  /* 여기에 원하는 스타일을 추가하세요 */
+  background-color: pink; /* 예시로 버튼의 배경색을 파란색으로 지정 */
+  color: white; /* 예시로 버튼 텍스트의 색상을 흰색으로 지정 */
+    border: none; /* 예시로 버튼 테두리를 없앱니다 */
+  padding: 0px 10px;
+}
+
+@keyframes rainbowBackground {
+  0% { background-position: 0% 0%; } /* 시작 지점 */
+  100% { background-position: 100% 0%; } /* 끝 지점 */
+}
+
+.filterButton:hover {
+  background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3); /* 무지개색 그라데이션 */
+  background-size: 600% 600%; /* 그라데이션 반복 횟수 */
+  animation: rainbowBackground 1s linear infinite; /* 호버시 애니메이션 적용 */
+}
+.filterPosition {
+  position: fixed;
+  
 }
