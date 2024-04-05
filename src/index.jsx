@@ -13,7 +13,9 @@ import DataTable from './mui/DataTable'
 import Alert from './mui/Alert'
 import AppBar from './mui/AppBar'
 import Cards from './mui/Cards'
-import TemporaryDrawer from './mui/TemporaryDrawer';
+import TemporaryDrawer from './mui/TemporaryDrawer'
+import Grid from './mui/Grid'
+import Modal from './mui/Modal'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -37,6 +39,10 @@ root.render(
       <Cards />
       <hr />
       <TemporaryDrawer />
+      <hr />
+      <Grid />
+      <hr />
+      <Modal />
       <hr />
     </div>
   </React.StrictMode>
